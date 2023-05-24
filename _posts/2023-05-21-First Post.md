@@ -23,7 +23,7 @@ Unlike the two of them i dont have a Phd in robotics, physics or mathematics so 
 
 ## Blessing or curse?
 
-AI making programming more accessable for all is certainly not a bad thing, but i do like the idea of my job still paying me a decent amount cause not everyone can do it.
+AI making programming more accessable for all is certainly not a bad thing, but i do like the idea of my job still paying me a decent amount because not everyone can do it.
 
 Jokes aside aslong as we dont create a skynet all is good. That's enough from me, i hope you enjoyed reading this and i thought i'd attach a funny meme on your way out:
 
