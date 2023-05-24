@@ -21,12 +21,14 @@ In the episode they discussed the several topics but the most intersting was: *i
 Unlike the two of them i dont have a Phd in robotics, physics or mathematics so a fair bit went over my head but a link to there dicussion can be found [here](https://www.youtube.com/watch?v=uD353DeOM-4&t=424s&ab_channel=LexClips).
 
 
----
 ## Blessing or curse?
 
 AI making programming more accessable for all is certainly not a bad thing, but i do like the idea of my job still paying me a decent amount cause not everyone can do it.
 
-Jokes aside aslong as we dont create a skynet all is good. That's enough from me, i hope you enjoyed reading this and i thought i'd attach a funny meme on your way out
+Jokes aside aslong as we dont create a skynet all is good. That's enough from me, i hope you enjoyed reading this and i thought i'd attach a funny meme on your way out:
 
 
-![](/images/logo.png "fast.ai's logo")
+![](/images/gptGoat.jpg "It Really be like that")
+
+---
+Adios!
