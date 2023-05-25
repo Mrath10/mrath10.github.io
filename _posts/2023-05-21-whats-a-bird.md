@@ -11,9 +11,25 @@ In my journey to get this question working little did i know what lurked around 
 ## .fpx?
 using the search function had provided me several errors, the occansional time out, the search function not working because it didn't seem to recognize the search function that was literally defined the line above. Thanks to [this](https://lovellbrian.github.io/2023/05/16/Bug.html) post on brians blog i was able to resolve my issues!
 
-That was until i had reached an error that would plauge me for hours, the .fpx file type error:
+That was until i had reached an error that would plauge me for hours, the **.fpx** file type error (this was taken form the ed post i had made):
 
-![](/images/gptGoat.jpg "It Really be like that")
+![](/images/fpx_pain.jpg "It Really be like that")
+
+
+While this error was extremely fustrating at first, thanks to it i understood how alot of this notebook works:
+  - the error does not actually occur when *search_images_ddg* is called but rather when the image is being resized. 
+  - *search_images_ddg* will retrieve a range of image file types, not strictly JPEG's
+  - running this piece of code for two different directories can end up with them having a large amount of images being identical in both
+ 
+I did learn some other things but i'll keep them for my next blog post which will detail my process for question 2. I have to say that i have found alot of this to be interesting
+
+and it tends to parallel some of the practices and theory from my machine learning course: *COMP4702*. while similar they approach certain aspects of developing your model differently which i find very interesting. 
+
+Beside all of this i have to say resolving this issue took a lot longer than i liked, i literally deleted the image file and ran it the next day - Good bye .fpx!
+
+I think its kind of becoming a traditon to leave a meme at the end of my post so i will keep doing so:
+![](/images/burning_meme.jpg "It Really be like that")
+
 
 ---
 Adios!
