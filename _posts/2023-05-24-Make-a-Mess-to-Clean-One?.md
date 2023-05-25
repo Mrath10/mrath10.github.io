@@ -4,37 +4,47 @@ Remember how i talked about Question 2 seeming simple enough, i was kinda right 
 
 ## It's actually Quicker but you can't really see it!
 
-Being a student that is currently taking COMP4702 (Machine Learning) at UQ I have been learning the standard practices for how one approaches developing a machine learning model and i have to say
+Being a student that is currently taking COMP4702 (Machine Learning) at UQ I have been learning the standard practices for how one approaches developing a machine learning model and i have to say it turns some of the principals on their heads, lets get into it shall we?
 
-Question 2! the multi classfication problem. it seemed simple enough, I was wrong - very wrong.
+## You train and Tune?
 
-## Find my Bird!
-
-to attempt to complete my question 2 i decided to get the notebook *00-what-is-a-bird* working. I felt like this example was simiar enough to what i needed to do for question 2, get images, train a model, tune the model and use this model on our training set. 
-
-In my journey to get this question working little did i know what lurked around the corner, the search errors. 
-
-## .fpx?
-using the search function had provided me several errors, the occansional time out, the search function not working because it didn't seem to recognize the search function that was literally defined the line above. Thanks to [this](https://lovellbrian.github.io/2023/05/16/Bug.html) post on brians blog i was able to resolve my issues!
-
-That was until i had reached an error that would plauge me for hours, the **.fpx** file type error (this was taken form the ed post i had made):
-
-![](/images/fpx_pain.png "why")
-
-
-While this error was extremely fustrating at first, thanks to it i understood how alot of this notebook works:
-  - the error does not actually occur when *search_images_ddg* is called but rather when the image is being resized. 
-  - *search_images_ddg* will retrieve a range of image file types, not strictly JPEG's
-  - running this piece of code for two different directories can end up with them having a large amount of images being identical in both
+I think one of the biggest hurdles in my understanding of fastai was how it handles training and testing of the model. In typical machine learing enviroments, we tend to do this in 3 stages:
+  1. obtain and process input data
+  2. split the data into training and testing
+  3. use the training data to develop the model
+  4. Test the model against the test data and evaluate its performance
+  5. tune the model as needed to improve performance
  
-I did learn some other things but i'll keep them for my next blog post which will detail my process for question 2. I have to say that i have found alot of this to be interesting
+ Seems simple enough? fastai kind of jumbles up this order and while it goes against my intuition, it works out to be alot quicker and in some cases, better. 
+ 
+ For starters, fast ai splits the initial data into training and validation sets. like normal ML the training set it used to train the model using the following lines of code:
+ 
+```python
+learn = vision_learner(dls, resnet18, metrics=error_rate)
+learn.fine_tune(3)
+```
 
-and it tends to parallel some of the practices and theory from my machine learning course: *COMP4702*. while similar they approach certain aspects of developing your model differently which i find very interesting. 
+The first line for will train the model on the first set while the second will run the tune the model based on the validation set for a specified number epochs. thats steps 2-5 in one go! It is but it also is not. we just created a model based on data that has not been processed, won't his lead to all kinds of issues? if you left it as is maybe, thats why we do what comes next!
 
-Beside all of this i have to say resolving this issue took a lot longer than i liked, i literally deleted the image file and ran it the next day - Good bye .fpx!
+## Train Again?
+As Jermey had pointed out in his second lecture for fast ai, a really efficient way to process our input data is to actually train our model first and then let it tell us what it was most uncertain about, or what it failed at. we then take a look at it and decide whether our model misclassified or it tried to make sense of well, garbage. We achieve this by using the following lines:
+```python
+interp.plot_top_losses(10,nrows=3,figsize=(17,15))
+cleaner = ImageClassifierCleaner(learn)
+cleaner
+```
 
-I think its kind of becoming a traditon to leave a meme at the end of my post so i will keep doing so:
-![](/images/burning_meme.jpg "It Really be like that")
+using top losses we can see what the model struggled with and from that we get get the following decicison matrix
+
+|        | Model said Yes       | Model said No       |
+| -------------- | -------------- | -------------- |
+| I said Yes     | We Good  | Please dont plug me into the matrix|
+| I said no | Skynet Scary too| What even is that|
+
+Jokes aside (please dont hurt me my machine overlords) we used the image classifier cleaner to find what images were incorrectly identified or waste for both the training and validation set. We then retrain our model based on this new data and viola, step 1 is completed! it just took doing the rest first!
+ 
+You really thought i wouldnt?
+![](/images/clean_data.jpg "Drake Gets It")
 
 
 ---
