@@ -13,7 +13,7 @@ using the search function had provided me several errors, the occansional time o
 
 That was until i had reached an error that would plauge me for hours, the **.fpx** file type error (this was taken form the ed post i had made):
 
-![](/images/fpx_pain.jpg "It Really be like that")
+![](/images/fpx_pain.png "why")
 
 
 While this error was extremely fustrating at first, thanks to it i understood how alot of this notebook works:
