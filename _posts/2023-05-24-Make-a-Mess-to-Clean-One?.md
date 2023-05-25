@@ -43,7 +43,8 @@ using top losses we can see what the model struggled with and from that we get g
 
 Jokes aside (please dont hurt me my machine overlords) we used the image classifier cleaner to find what images were incorrectly identified or waste for both the training and validation set. We then retrain our model based on this new data and viola, step 1 is completed! it just took doing the rest first!
  
-You really thought i wouldnt?
+Couldn't resist this one:
+
 ![](/images/clean_data.jpg "Drake Gets It")
 
 
