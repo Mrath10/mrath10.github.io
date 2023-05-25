@@ -26,7 +26,7 @@ I mean no matter how much i look at it i still dont understand how higher dimesn
  
 For the road:
 
-![](/images/tsne_meme.jpg "Drake Gets It")
+![](/images/tsne_meme.jpg "Tis Not Simple")
 
 
 ---
