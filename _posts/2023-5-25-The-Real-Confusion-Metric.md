@@ -1,4 +1,4 @@
-# Where are we at
+# The Real Confusion Metric
 
 So Question 2 is pretty much compeleted now, i have to say. it was a true journey but i learnt alot and seriously had some fun.
 
